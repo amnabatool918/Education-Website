@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'css/research.css' %}">{% endblock link %}
+{% block title %} Research of University Of Developers {% endblock title %}
+
+{% block content %}
+
+<!--FRONT IMAGE-->
+
+    <section>
+        <div id="hero">
+            <video src="{% static "videos/research.mp4" %}" loop muted autoplay poster=""></video>
+            <div class="content d-flex align-items-center">
+                <div class="container text-center">
+                    <h1>UOD RESEARCH</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--image and text-->
+    <section class="space">
+        <div class="container">
+          <div class="row" style="margin-top: 4rem;">
+            <div class="col-md-6 align-self-center">
+              <h6 class="DOU">Interdisciplinary Research Institutes
+                Undergraduate Research</h6>
+              <h2 class="OUD">COLLABORATING ACROSS DISCIPLINES</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus accusantium possimus natus est culpa
+                voluptatibus obcaecati facere, dolorem eius, laborum omnis reprehenderit. Possimus sapiente reiciendis illum
+                tempora eveniet, qui velit maxime amet accusantium ipsa incidunt. Repellendus beatae placeat aut eum rerum
+                atque omnis, quas minus repudiandae odit, ab molestiae officia!</p>
+                <a href="{% url 'research' %}"><span class="que"><button>Read More</button></span></a>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <img src="{% static "images/pic3.jpg" %}" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+          <!--image and text-->
+    <section class="space">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex justify-content-center">
+              <img src="{% static "images/pic1.jpg" %}" class="img-fluid" alt="" />
+            </div>
+            <div class="col-md-6 align-self-center">
+              <h6 class="DOU">Business and Industry</h6>
+              <h2 class="OUD">DISCOVERING IDEAS AND ENTREPRENEURSHIP</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus accusantium possimus natus est culpa
+                voluptatibus obcaecati facere, dolorem eius, laborum omnis reprehenderit. Possimus sapiente reiciendis illum
+                tempora eveniet, qui velit maxime amet accusantium ipsa incidunt. Repellendus beatae placeat aut eum rerum
+                atque omnis, quas minus repudiandae odit, ab molestiae officia!</p>
+              <a href="{% url 'research' %}"><span class="que"><button>Read More</button></span></a>            </div>
+          </div>
+        </div>
+      </section>
+          <!--image and text-->
+    <section class="space">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 align-self-center">
+              <h6 class="DOU">Watch this video to discover University of Developers</h6>
+              <h2 class="OUD">FACILITATING NEW DISCOVERIES</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus accusantium possimus natus est culpa
+                voluptatibus obcaecati facere, dolorem eius, laborum omnis reprehenderit. Possimus sapiente reiciendis illum
+                tempora eveniet, qui velit maxime amet accusantium ipsa incidunt. Repellendus beatae placeat aut eum rerum
+                atque omnis, quas minus repudiandae odit, ab molestiae officia!</p>
+              <a href="{% url 'research' %}"><span class="que"><button>Read More</button></span></a>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <img src="{% static "images/pic2.jpg" %}" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endblock content %}

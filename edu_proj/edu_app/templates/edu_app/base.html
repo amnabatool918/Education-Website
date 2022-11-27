@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="{% static "images/Columbia.jpg" %}" />
+
+  <!-- Bootstrap Icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+  integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+  crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!--link CSS-->
+  {% block link %}<link rel="stylesheet" href="{% static 'css/base.css' %}">{% endblock link %}
+  <!--TITLE-->
+  <title>{% block title %} Home {% endblock title %}</title>
+
+  <!--link and script of FONTAWESOME-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/e2a52e4633.js" crossorigin="anonymous"></script>
+  
+  <!--link and script of Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css%22%3E">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+  crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+  crossorigin="anonymous" />
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+  crossorigin="anonymous" />
+</head>
+
+<body style="background-color: #f9f9f9 !important;">
+
+  <div class="navbar">
+
+    <!-- Navbar logo -->
+    <div class="nav-header">
+      <div class="nav-logo">
+        <a href="{% url 'base' %}">
+          <img src="{% static "images/Columbia.jpg" %}" width="50px" alt="logo" />
+        </a>
+      </div>
+    </div>
+
+    <!-- responsive navbar toggle button -->
+    <input type="checkbox" id="nav-check">
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+
+    <!-- Navbar items -->
+    <div class="nav-links">
+
+      <div class="dropdown">
+        <a class="dropBtn" href="{% url 'admission' %}">Admission
+        </a>
+        <div class="drop-content">
+          <a href="{% url 'admission' %}">Publications</a>
+          <a href="{% url 'admission' %}">Libraries</a>
+          <a href="{% url 'admission' %}">HR</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropBtn" href="{% url 'academics' %}">Academics
+        </a>
+        <div class="drop-content">
+          <a href="{% url 'academics' %}">Department & Programs</a>
+          <a href="{% url 'academics' %}">Major & certificates</a>
+          <a href="{% url 'academics' %}">Course guide</a>
+        </div>
+      </div>
+
+      <!-- Dropdown menu -->
+      <div class="dropdown">
+
+        <a class="dropBtn" href="{% url 'research' %}">Research
+          <i class="fas fa-angle-down"></i>
+        </a>
+        <div class="drop-content">
+          <a href="{% url 'research' %}">Publications</a>
+          <a href="{% url 'research' %}">Libraries</a>
+          <a href="{% url 'research' %}">HR</a>
+
+          <!-- Creating sub menu Dropdown -->
+          <div class="dropdown2">
+            <a class="dropBtn2" href="{% url 'base' %}">Campus life
+              <i class="fas fa-angle-right"></i>
+            </a>
+            <div class="drop-content2">
+              <a href="{% url 'base' %}">Benefits</a>
+              <a href="{% url 'about' %}">Accommodation</a>
+              <a href="{% url 'faculty' %}">Administration</a>
+              <a href="{% url 'faculty' %}">Alumni</a>
+              <a href="{% url 'academics' %}">BLOGS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropBtn" href="{% url 'faculty' %}">Faculty & staff
+        </a>
+        <div class="drop-content">
+          <a href="{% url 'faculty' %}">HR</a>
+          <a href="{% url 'faculty' %}">Employment</a>
+          <a href="{% url 'about' %}">lifestyle</a>
+          <a href="{% url 'faculty' %}">Scholars</a>
+        </div>
+      </div>
+
+      <a href="{% url 'about' %}">About</a>
+
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'dashboard' %}">Dashboard</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <div class="dropdown">
+        <button class="loginBtn">Login / Signup <i class="fa-sharp fa-solid fa-angles-right"></i></button>
+        <div class="drop-content">
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Signup</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      {% block msg %}
+      {% endblock msg %}
+    </div>
+  </div>
+  <div class="row">
+    {% block side %}
+    {% endblock side %}
+  </div>
+</div>
+
+
+
+{% block content %}
+
+  <!--------------FRONT-COVER IMAGE------------------------>
+  
+  <section>
+    <div id="hero">
+      <video src="{% static "videos/uni.mp4" %}" loop muted autoplay poster=""></video>
+      <div class="content d-flex align-items-center">
+        <div class="container text-center">
+
+          <h1>UNIVERSITY OF<span class="whi"> DEVELOPERS</span></h1>
+          <h3>Read, Lead, Succeed</h3>
+          <br>
+          <a href="{% url 'signup' %}" style="text-decoration: none;"><span class="but"><button>Apply to UOD</button></span></a>
+          <a href="{% url 'admission' %}" style="text-decoration: none;"><span class="bto"><button>Explore Majors</button></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<br><br><br><br><br>
+  <section>
+    <div id="heroin">
+      <div class="data d-flex align-items-center">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <h1>University Of Developers</h1>
+              <p class="lh-base">Advances in technology will continue to reach far into every <br>
+                sector of our economy. Future job and economic growth in industry,<br>
+                defense, transportation, agriculture, health care, and life sciences <br>
+                is directly related to scientific advancement.With more than 22,000 <br>
+                students, 13,000 staff and 230,000 alumni around the world, people are<br>
+                what make University of Developers an internationally renowned university.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br><br><br>
+  <section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mt-0">Our Services</h2>
+      <hr class="divider" />
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Sturdy Themes</h3>
+            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Full Stack Developer</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi bi-book fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Deep learning</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi bi-building fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi bi-alarm fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi bi-bank fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Ready to Publish</h3>
+            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Made with Love</h3>
+            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="space">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static "images/c11.jpg" %}" class="img-fluid" alt="logo" />
+        </div>
+        <div class="col-md-6">
+          <h6 class="DOU">ABOUT US</h6>
+          <h2 class="OUD">University of Developers</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus accusantium possimus natus est culpa
+            voluptatibus obcaecati facere, dolorem eius, laborum omnis reprehenderit. Possimus sapiente reiciendis illum
+            tempora eveniet, qui velit maxime amet accusantium ipsa incidunt. Repellendus beatae placeat aut eum rerum
+            atque omnis, quas minus repudiandae odit, ab molestiae officia!</p>
+          <a href="{% url 'about' %}"><span class="que"><button>Read More</button></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="space">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <h6 class="DOU">OUR PRESENTATION IS FOR YOU</h6>
+          <h2 class="OUD">Watch this video to discover University of Developers</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus accusantium possimus natus est culpa
+            voluptatibus obcaecati facere, dolorem eius, laborum omnis reprehenderit. Possimus sapiente reiciendis illum
+            tempora eveniet, qui velit maxime amet accusantium ipsa incidunt. Repellendus beatae placeat aut eum rerum
+            atque omnis, quas minus repudiandae odit, ab molestiae officia!</p>
+          <a href="{% url 'research' %}"><span class="que"><button>Read More</button></span></a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <video class="img-fluid" src="{% static "videos/univideo.mp4" %}" controls poster="{% static "images/videothumb.png" %}"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================  Blog Block ======================== -->
+
+  <section class="blog blog-block" style="background-color: #f9f9f9 !important;">
+
+    <div class="container" style="background-color: #f9f9f9 !important;">
+
+      <!-- === blog header === -->
+
+      <header>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h2 class="title" style="font-size: 50px; color: #001e44; font-weight: 800;">BLOG & NEWS</h2>
+            <div class="text">
+              <p style="font-size: 25px;">Latest Stories</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- === blog item === -->
+      <div class="row">
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'research' %}">
+              <div class="image">
+                <img src="{% static "images/07.jpg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">28 October 2022</div>
+                <div class="title">
+                  <h2 class="h3">Deep learning with light</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    A new method uses optics to accelerate machine-learning computations on smart speakers and other
+                    low-power connected devices.This can enable an edge device, like a smart home speaker, to perform
+                    computations with more than a hundred-fold improvement in energy efficiency.!
+                  </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'research' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'research' %}">
+              <div class="image">
+                <img src="{% static "images/view.jpg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">23 March 2022</div>
+                <div class="title">
+                  <h2 class="h3">Building with nanoparticles, from the bottom up</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    The technique, which combines chemistry and directed assembly processes with conventional
+                    fabrication techniques, enables the efficient formation of high-resolution, nanoscale features
+                    integrated with nanoparticles for devices like sensors, lasers, and LEDs, which could boost their
+                    performance.
+                  </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'research' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'academics' %}">
+              <div class="image">
+                <img src="{% static "images/PP.jpeg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">23 March 2022</div>
+                <div class="title">
+                  <h2 class="h3">A better education for everyone</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    Diverse campuses are places where students can expand their horizons and benefit from a vibrant,
+                    diverse learning community. Encountering different types of people helps prepare students for a
+                    diverse society and workforce.Learn about the benefits of a diverse campus
+                  </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'academics' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'faculty' %}">
+              <div class="image">
+                <img src="{% static "images/04.jpg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">31 April 2022</div>
+                <div class="title">
+                  <h2 class="h3">Support from all sides</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    Supporters of race conscious admissions include the Asian American Legal Defense and Education Fund,
+                    the American Council on Education, the Anti-Defamation League, former military officials, leading
+                    economists and social scientists, and many major American corporations.
+                  </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'faculty' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'academics' %}">
+              <div class="image">
+                <img src="{% static "images/06.jpg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">1 May 2022</div>
+                <div class="title">
+                  <h2 class="h3">UOD gets broad support in admissions case</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    The concentration in Computer Science is designed to teach students skills and ideas they will use
+                    immediately and in the future. Because information technology affects every aspect of society,
+                    graduates with computer science degrees have open to them an enormous variety of
+                    careers—engineering, teaching, medicine, law, basic science, entertainment, management, and
+                    countless others. </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'academics' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <a href="{% url 'admission' %}">
+              <div class="image">
+                <img src="{% static "images/book.jpg" %}" height="550" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">10 October 2022</div>
+                <div class="title">
+                  <h2 class="h3">Have a look at UOD new projects!</h2>
+                </div>
+                <div class="description">
+                  <p>
+                    UOD continually develops organizations and partnerships that foster interdisciplinary work. Listed
+                    here are just some of the MIT labs, centers, and programs where groundbreaking research is happening
+                    every day.
+                  </p>
+                </div>
+              </div>
+              <div class="show-more">
+                <a href="{% url 'admission' %}"><span class="btn btn-main btn-block">Read more</span></a>
+              </div>
+            </a>
+          </article>
+        </div>
+
+      </div>
+      <!--/row-->
+      <!-- === button more === -->
+
+      <div class="wrapper-more">
+        <a href="{% url 'base' %}" class="btn btn-main">View all posts</a>
+      </div>
+
+    </div>
+    <!--/container-->
+  </section>
+  <section>
+    <div id="zolors">
+      <img src="{% static "images/colors.jpg" %}" class="img-fluid" alt="logo" />
+      <div class="content d-flex align-items-center">
+        <div class="container text-center">
+          <h1>We value a diversity of identities, ideas, and experiences</h1>
+          <p>Diversity is a source of strength, creativity, and innovation for UW–Madison. We value the contributions of
+            each person and respect the profound ways their identity, culture, background, experience, status,
+            abilities, and opinions enrich the university community. We commit ourselves to the pursuit of excellence in
+            teaching, research, outreach, and diversity as inextricably linked goals.</p>
+          <br>
+          <a href="{% url 'signup' %}" style="text-decoration: none;"><span class="pop"><button>Get Register UOD</button></span></a><br><br>
+          <a href="{% url 'research' %}" style="text-decoration: none;"><span class="pop"><button>Our Work</button></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+  <!--search bar-->
+  <div class="container-s">
+    <div class="row d-flex text-center">
+      <div class="col-6">
+        <div class="search-t">
+          <h2 style="margin: 0 0 -3rem;">Are you searching for something specific?</h2>
+        </div>
+      </div>
+      <div class="col-6">
+        <form action="http://www.google.com/search" method="get" class="search-bar">
+          <input type="text" placeholder="Search People and Pages.." name="search">
+          <button type="submit"><img src="{% static "images/search.png" %}" alt="" /></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <section class="footer">
+    <div class="container">
+      <div class="row color">
+        <h4><a href="#" class="footer-heading">Questions? Contact us.</a></h4>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h5 class="footer-paragraph">About Us</h5>
+          <p class="footer-items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            magnam aspernatur similique rem odio reiciendis quaerat dolorum, quasi ab. Ipsam, aliquam libero
+            natus quidem tempore distinctio id similique necessitatibus fuga?</p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" >
+          <h5 class="footer-paragraph">Categories</h5>
+          <li class="footer-items" ><a href="#" style="text-decoration: none;">Address: 100136 California, Usa.</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Phone: (+01102345567)</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Email: amnabatool469@gmail.com</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Skype: you_online</a></li>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <h5 class="footer-paragraph">Links</h5>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Investor Relations</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Privacy</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Speed Test</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Affilates</a></li>
+          <li class="footer-items"><a href="#" style="text-decoration: none;">Terms</a></li>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13602.291245633969!2d74.28932972477013!3d31.535890890569746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919034290e373e1%3A0xd0f8fba9b24cd969!2sSamanabad%20Town%2C%20Lahore%2C%20Punjab%2054000%2C%20Pakistan!5e0!3m2!1sen!2s!4v1668948824286!5m2!1sen!2s" 
+          width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="img-foot">
+        <div class="row text-center">
+          <div class="container">
+            <div class="col-lg-12">
+              <div class="footer-icon">
+                <img src="{% static "images/Columbia.jpg" %}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="footer-texto">
+                <h6>University Of Developers</h6>
+                <h6><i class="fa-solid fa-envelope"></i> Contact Us</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container-7 text-center">
+          <div class="iton fac"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></div>
+          <div class="iton twi"><a href="https://twitter.com/"><i class="fa-brands fa-square-twitter"></i></a></div>
+          <div class="iton ins"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></div>
+          <div class="iton lin"><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></div>
+          <div class="iton you"><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></div>
+          <div class="iton twi"><a href="https://www.skype.com/en/"><i class="fa-brands fa-skype"></i></a></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <marquee behavior="alternate" direction="left">
+            <h6 class="footer-base">Copyright@ALL RIGHTS RESERVED 2016-2022</h6>
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

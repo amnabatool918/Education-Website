@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'css/admission.css' %}">{% endblock link %}
+{% block title %} ADMISSIONS {% endblock title %}
+
+{% block content %}
+<!--FRONT IMAGE-->
+
+<section>
+    <div id="heropic">
+        <img src="{% static "images/07.jpg" %}" width="800" height="445" alt="FRONT IMG">
+        <div class="content d-flex align-items-center">
+            <div class="container text-center">
+                <h1>ADMISSIONS & AID</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--TABLES OF ADMISSION PROGRAM-->
+
+    <div class="container content-t">
+        <div class="row gutters">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="plan-card plan-one">
+                    <div class="pricing-header">
+                        <h4 class="plan-title">UNDERGRADUATE PROGRAM</h4>
+                        <div class="plan-cost">BS(CS/IT/SE)</div>
+                        <div class="plan-save">CAREER DEVELOPMENT</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Programmings Languages</li>
+                        <li>OOPs Concepts</li>
+                        <li>DataSciences</li>
+                        <li>Database</li>
+                        <li>Algorithms</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                    <div class="plan-footer">
+                        <a href="{% url 'signup' %}" class="btn btn-info btn-lg btn-rounded">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="plan-card plan-one">
+                    <div class="pricing-header">
+                        <h4 class="plan-title">GRADUATE PROGRAM</h4>
+                        <div class="plan-cost">MS(CS/SE/IT)</div>
+                        <div class="plan-save">MORE OPPORTUNITIES</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Cloud Computing</li>
+                        <li>Fuzzy Logic</li>
+                        <li>Big Data Analytics</li>
+                        <li>Fuzzy Logic</li>
+                        <li>Machine Learning</li>
+                        <li>Analysis of Algorithms</li>
+                    </ul>
+                    <div class="plan-footer">
+                        <a href="{% url 'signup' %}" class="btn btn-info btn-lg btn-rounded">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="plan-card plan-one">
+                    <div class="pricing-header">
+                        <h4 class="plan-title">DOCTORAL PROGRAM</h4>
+                        <div class="plan-cost">PHD</div>
+                        <div class="plan-save">EXCELLENT CAREER</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Deep Learning</li>
+                        <li>CNN/ANN</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Robotics</li>
+                        <li>Networking</li>
+                        <li>Bioinformatics</li>
+                    </ul>
+                    <div class="plan-footer">
+                        <a href="{% url 'signup' %}" class="btn btn-info btn-lg btn-rounded">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--total programs-->
+    <section class="facts-wrap" style="background-image: url('images/bg-3.jpg');">
+        <div class="container">
+            <div class="facts">
+                <div class="three-column-facts">
+                    <div>
+                        <h3>Top 55</h3>
+                        <b></b>
+                        <p>World-class university (Center for World University Rankings, 2021)</p>
+                    </div>
+                    <div>
+                        <h3>24</h3>
+                        <b></b>
+                        <p>Campuses (including undergraduate, graduate, and professional schools) as well as the online
+                            World Campus </p>
+                    </div>
+                    <div>
+                        <h3>275+</h3>
+                        <b></b>
+                        <p>Undergraduate majors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

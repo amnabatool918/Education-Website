@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'css/academics.css' %}">{% endblock link %}
+{% block title %} Academics UOD {% endblock title %}
+
+{% block content %}
+<!--------------FRONT-COVER IMAGE------------------------>
+<section>
+  <div id="heropic">
+  <img src="{% static "images/7.jpg" %}" width="800" height="445" alt="FRONT IMG" />
+    <div class="content d-flex align-items-center">
+      <div class="container text-center">
+        <h1>ACADEMICS</h1>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!--TEXT DOCUMENT-->
+
+<div id="PAGE-CONTENT" class="wrap clearfix">
+
+  <div id="brc-print" class="clearfix">
+        <!--htdig_noindex-->
+
+        <div id="breadcrumb" class="clearfix" role="navigation" aria-label="breadcrumb">
+
+          <ul><li><a href="{% url 'base' %}">Home</a><span class="crumbsep">&gt;</span></li><li><a href="{% url 'about' %}">This&nbsp;Is&nbsp;UOD</a><span class="crumbsep">&gt;</span></li><li><a href="{% url 'admission' %}">Undergraduate&nbsp;Education</a><span class="crumbsep">&gt;</span></li><li><span class="active">Academic Programs</span></li></ul>
+
+        </div><!-- end #breadcrumb -->
+<!--/htdig_noindex-->
+
+</div>
+
+<div id="LEFTAREA">
+
+  <div id="sidebar">
+
+    <div id="search" role="search">
+
+      <form id="cl-search" action="/search/" class="clearfix">
+
+        <label for="name">Search Catalog</label>
+
+        <input type="text" name="search" size="25" placeholder="Search the Bulletin..." class="searchbox" id="name" title="Search Catalog">
+                
+
+        <button class="search-button" type="submit">
+
+          <i class="fa fa-search" aria-hidden="true"></i>
+
+          <span class="sr-only">Submit search</span>
+
+        </button>
+
+      </form>
+
+    </div>
+
+<!-- end #search -->
+
+<div id="sidebar-header">Catalog Navigation</div>
+
+<div class="cl-menu">
+
+  <ul>
+
+    <a href="{% url 'base' %}"><li>This Is UOD</li></a>
+
+    <a href="{% url 'admission' %}"><li>Department & Programs</li></a>
+
+    <a href="{% url 'admission' %}"><li> Major & certificates</li></a>
+
+    <a href="{% url 'admission' %}"><li>Course guide</li></a>
+
+    <a href="{% url 'research' %}"><li>Research Faculty & staff About Login</li></a>
+
+    <a href="{% url 'base' %}"><li>Investor</li></a>
+
+    <a href="{% url 'about' %}"><li>Overview</li></a>
+
+    <a href="{% url 'faculty' %}"><li>Campus Life</li></a>
+
+    <a href="{% url 'academics' %}"><li>Academic Resources</li></a>
+
+    <a href="{% url 'admission' %}"><li>Undergraduate Education</li></a>
+
+    <a href="{% url 'about' %}"><li>First Year</li></a>
+
+    <a href="{% url 'admission' %}"><li>Major Course of Study</li></a>
+
+    <a href="{% url 'admission' %}"><li>Minors</li></a>
+
+    <a href="{% url 'about' %}"><li>General Institute Requirements</li></a>
+
+    <a href="{% url 'academics' %}"><li>Academic and Research Options</li></a>
+
+    <a href="{% url 'admission' %}"><li>Major Course of Study</li></a>
+
+    <a href="{% url 'base' %}"><li>Career and Professional Options</li></a>
+
+    <a href="{% url 'admission' %}"><li>Admissions</li></a>
+
+    <a href="{% url 'admission' %}"><li>Diplomas</li></a>
+
+    <a href="{% url 'base' %}"><li>This Is UOD</li></a>
+
+    <a href="{% url 'admission' %}' %}"><li>Department & Programs</li></a>
+
+    <a href="{% url 'admission' %}"><li> Major & certificates</li></a>
+
+    <a href="{% url 'admission' %}"><li>Course guide</li></a>
+
+    <a href="{% url 'research' %}"><li>Research  Faculty & staff About Login</li></a>
+
+    <a href="{% url 'about' %}"><li>Investor</li></a>
+
+    <a href="{% url 'about' %}"><li>Overview</li></a>
+
+    <a href="{% url 'faculty' %}"><li>Campus Life</li></a>
+
+    <a href="{% url 'academics' %}"><li>Academic Resources</li></a>
+
+    <a href="{% url 'admission' %}"><li>Undergraduate Education</li></a>
+
+    <a href="{% url 'research' %}"><li>First Year</li></a>
+
+    <a href="{% url 'admission' %}"><li>Major Course of Study</li></a>
+
+  </ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="RIGHTAREA">
+
+  <div ID="MAINCONTENT" class="widthfix">
+
+    <h1 class="page-title">Academic Programs</h1>
+
+    <div id="textcontainer" class="page_content">
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+      <p>The undergraduate programs at UOD are designed to help students develop the knowledge and capabilities needed to meet the challenges of modern society. An MIT education joins the power of a specific discipline to a concern for social values and goals. In addition to developing expertise in a given field, undergraduates are encouraged to take advantage of the opportunities for broad learning at MIT and to become creative, intellectual leaders and problem solvers whose passion for learning is lifelong.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+{% endblock content %}

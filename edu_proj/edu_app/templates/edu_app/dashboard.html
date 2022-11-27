@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Dashboard {% endblock title %}
+
+
+{% block msg %}
+    {% if messages %}
+    {% for message in messages %}
+<div {% if message.tag %} class="alert alert-{{meggage.tag}} alert-dismissible fade show" {% endif %}>
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-label="true">&times;</span>
+        </button>
+</div>
+    {% endfor %}
+    {% endif %}
+{% endblock msg %}
+
+
+{% block side %}
+<div class="col-sm-2 text-black my-5 text-center">
+    <h4 class="my-5">Profile</h4>
+    <h5>{{full_name}}</h5>
+    {% for group in groups %}
+    <p>{{group.name}}</p>
+    {% endfor %}
+</div>
+{% endblock side %}
+
+
+{% block content %}
+<div class="col-sm-10 mx-5">
+        <h1 class="text-black">Dashboard Page</h1>
+        <a href="{% url 'addattendance' %}" class="btn btn-success mt-3">Add Attendance</a>
+        <br><br>
+        <h4 class="text-center alert alert-info mt-0">Attendance of Students</h4>
+        {% if attendance %}
+    <table class="table table-hover bg-white">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" style="width:2%;">ID</th>
+                <th scope="col" style="width:15%;">Subject</th>
+                <th scope="col" style="width:15%;">Attendance date</th>
+                <th scope="col" style="width:15%;">Session year</th>
+                <th scope="col" style="width:15%;">Created at</th>
+                <th scope="col" style="width:15%;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for attendance in attendance %}
+            <tr>
+                <th scope="row">{{attendance.id}}</th>
+                <td>{{attendance.subject}}</td>
+                <td>{{attendance.attendance_date}}</td>
+                <td>{{attendance.session_year}}</td>
+                <td>{{attendance.created_at}}</td>
+                <td class="text-center">
+                    <a href="{% url 'updateattendance' attendance.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    {% if perms.edu_app.delete_student %}
+                    <form action="{% url 'deleteattendance' attendance.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                    </form>
+                    {% endif %}
+                    </td>
+                </tr>
+               {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h4 class="text-center alert alert-warning">No Records</h4>
+        {% endif %}
+    </div>
+
+<div class="col-sm-10 mx-5">
+    <a href="{% url 'addstudent' %}" class="btn btn-success mt-3">Add Students</a>
+    <br><br>
+    <h4 class="text-center alert alert-info mt-0">Registered Students</h4>
+    {% if student %}
+    <table class="table table-hover bg-white">
+        <thead>
+            <tr class="text-center ">
+                <th scope="col" style="width:2%;">ID</th>
+                <th scope="col" style="width:28%;">Title</th>
+                <th scope="col" style="width:20%;">First Name</th>
+                <th scope="col" style="width:20%;">Last Name</th>
+                <th scope="col" style="width:55%;">Address</th>
+                <th scope="col" style="width:55%;">Confirm_address</th>
+                <th scope="col" style="width:20%;">Father Name</th>
+                <th scope="col" style="width:20%;">Email</th>
+                <th scope="col" style="width:28%;">Program</th>
+                <th scope="col" style="width:12%;">Roll no</th>
+                <th scope="col" style="width:20%;">Subject</th>
+                <th scope="col" style="width:12%;">CNIC</th>
+                <th scope="col" style="width:10%;">Martial status</th>
+                <th scope="col" style="width:10%;">DOB</th>
+                <th scope="col" style="width:10%;">Cell no</th>
+                <th scope="col" style="width:10%;">Parent mob</th>
+                <th scope="col" style="width:10%;">Gender</th>
+                <th scope="col" style="width:10%;">Admission date</th>
+                <th scope="col" style="width:12%;">Country</th>
+                <th scope="col" style="width:12%;">City</th>
+                <th scope="col" style="width:10%;">Zip code</th>
+                <th scope="col" style="width:15%;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for student in student %}
+            <tr>
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.Title}}</td>
+                <td>{{student.First_Name}}</td>
+                <td>{{student.Lastt_Name}}</td>
+                <td>{{student.Address}}</td>
+                <td>{{student.Confirm_address}}</td>
+                <td>{{student.Father_Name}}</td>
+                <td>{{student.Email}}</td>
+                <td>{{student.Program}}</td>
+                <td>{{student.Roll_no}}</td>
+                <td>{{student.Subject}}</td>
+                <td>{{student.CNIC}}</td>
+                <td>{{student.Martial_status}}</td>
+                <td>{{student.DOB}}</td>
+                <td>{{student.Cell_no}}</td>
+                <td>{{student.Parent_mob}}</td>
+                <td>{{student.Gender}}</td>
+                <td>{{student.Admission_date}}</td>
+                <td>{{student.Country}}</td>
+                <td>{{student.City}}</td>
+                <td>{{student.Zip_code}}</td>
+                <td class="text-center">
+                <a href="{% url 'updatestudent' student.id %}" class="btn btn-warning btn-sm">Edit</a>
+                {% if perms.edu_app.delete_student %}
+                <form action="{% url 'deletestudent' student.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                </form>
+                {% endif %}
+                </td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+    <h4 class="text-center alert alert-warning">No Records</h4>
+    {% endif %}
+</div>
+{% endblock content %}
